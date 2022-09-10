@@ -1,0 +1,49 @@
+<a id="progress"></a>
+<table id="progress" #table *ngIf="uploads.length > 0" mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+  <!-- File Column -->
+  <ng-container matColumnDef="file">
+    <th mat-header-cell *matHeaderCellDef>{{'send.tableFile' | translate}}</th>
+    <td mat-cell *matCellDef="let upload">
+      <img alt="" mat-list-icon appFileIcon [file]="upload.file.name">
+      {{upload.file.name}}
+      <mat-icon color="primary" style="display: inline" *ngIf="upload.progress==100">check_circle</mat-icon>
+      <mat-icon color="error" style="display: inline" *ngIf="!upload.extensionAllowed">error</mat-icon>
+      <mat-icon title="file too big" color="error" style="display: inline" *ngIf="!upload.fileSizeAllowed">error</mat-icon>
+      <mat-icon title="file too small" color="error" style="display: inline" *ngIf="upload.fileZeroBytes">error</mat-icon>
+      <mat-icon title="virus" color="error" style="display: inline" *ngIf="upload.virus">error</mat-icon>
+    </td>
+  </ng-container>
+
+  <!-- Progress Column -->
+  <ng-container matColumnDef="progress">
+    <th mat-header-cell *matHeaderCellDef>{{'send.tableProgress' | translate}}</th>
+    <td mat-cell *matCellDef="let upload">
+      <mat-progress-bar *ngIf="upload.extensionAllowed && upload.fileSizeAllowed && !upload.fileZeroBytes && !upload.virus" class="example-margin" color="primary"
+        mode="buffer" [value]="upload.progress" [bufferValue]="upload.buffer">
+      </mat-progress-bar>
+      <div class="text-muted progress" *ngIf="upload.transferred && !upload.virus">
+        <span *ngIf="upload.progress<100">{{upload.transferred | filesize}} {{'send.of' | translate}}&nbsp;</span>
+        <span>{{upload.file.size | filesize}}</span>
+      </div>
+
+      <div class="text-muted" *ngIf="!upload.extensionAllowed">
+        {{'send.notAllowedFileExtension' | translate}}
+      </div>
+      <div class="text-muted" *ngIf="!upload.fileSizeAllowed">
+        {{'send.notAllowedFileSize' | translate}}
+      </div>
+      <div class="text-muted" *ngIf="upload.virus">
+        {{'upload.virus' | translate}}
+        ({{upload.virus}})
+      </div>
+      <div class="text-muted" *ngIf="upload.fileZeroBytes">
+        {{'upload.fileZeroBytes' | translate: {Default: "Zero byte files are not allowed"} }}
+      </div>
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.error]="row?.virus"></tr>
+</table>

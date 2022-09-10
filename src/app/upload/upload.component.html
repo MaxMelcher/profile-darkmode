@@ -1,0 +1,79 @@
+<div class="jumbotron upload container mat-elevation-z2">
+
+    <img alt="" *ngIf="defaultConfig?.logo" class="logo" src="{{defaultConfig?.logo}}">
+    <div class="row">
+        <div class="col-12 col-sm order-12 order-sm-1">
+            <h1 class="display-4">{{'home.title' | translate}}</h1>
+            <p class="lead">{{'home.byline' | translate}}</p>
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div *ngIf="deleted">
+        <div class="alert alert-danger" role="alert">
+            {{'upload.deleted' | translate}}
+        </div>
+    </div>
+
+    <div *ngIf="session && session.sessionType === 2">
+        <div class="alert alert-danger" role="alert">
+            {{'upload.sessionTypeSend' | translate}}
+        </div>
+    </div>
+
+
+    <div class="row" *ngIf="!deleted && session && session.sessionType === 4">
+        <div class="col">
+            <p>
+                {{'send.uploadFiles' | translate}}
+            </p>
+            <p class="lead">
+                <button mat-raised-button class="btn-send" color="primary" (click)="file.click()">{{'home.sendFiles' |
+                    translate}}
+                    <mat-icon title="{{'home.sendFiles' | translate}}">cloud_upload</mat-icon>
+                  </button>
+                <input style="visibility: hidden;" type="file" #file (change)="upload.onFilesAdded($event.target.files)"
+                    multiple />
+            </p>
+            <div #dragdrop class="uploadfilecontainer hiddenOnMobile" (click)=" file.click()" appDragDrop
+                (FileDropped)="upload.onFilesAdded($event)">
+                <mat-icon class="dragicon icon" title="{{'home.sendFiles' | translate}}">cloud_upload</mat-icon>
+                <div class="dragtext">{{'home.dragAndDrop' | translate}}</div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="hiddenOnMobile"
+                *ngIf="defaultConfig?.allowedFileSize > 0 || defaultConfig?.allowedFileExtensions">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle=true disabled="true" *ngIf="defaultConfig?.allowedFileSize > 0">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="text-muted">
+                                {{'upload.fileSizeLimit' | translate}} {{defaultConfig?.allowedFileSize | filesize}}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel *ngIf="defaultConfig.allowedFileExtensions">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="text-muted">
+                                {{'upload.fileExtensionLimit' | translate}}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        {{defaultConfig?.allowedFileExtensions}}
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!deleted">
+    <app-uploader #upload sessionType="4"></app-uploader>
+
+    <a id="destination"></a>
+    <div class="alert alert-success" role="alert" *ngIf="!upload.inProgress && upload.uploaded && defaultConfig.useEmail">
+        {{'upload.uploadComplete' | translate}}
+    </div>
+    <div class="alert alert-success hidden" role="alert" *ngIf="!upload.inProgress && upload.uploaded && !defaultConfig.useEmail">
+        {{'upload.noEmail' | translate}}
+    </div>
+</div>

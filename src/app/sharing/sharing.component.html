@@ -1,0 +1,93 @@
+<div id="sharing" class="sharing" *ngIf="sharingLink">
+    <hr class="my-4">
+    <span class="label label-share">{{'send.share' | translate}}</span>
+    <div class="sharingsection">
+        <div class="input-group sharelink">
+            <input #link matInput readonly="true" type="text" class="form-control link" (click)="link.select()"
+                [value]="sharingLink" />
+            <span class="input-group-append">
+                <button mat-raised-button class="button-copy" [class.clicked]="copyClicked" (click)="copyClick()"
+                    color="primary" ngxClipboard [cbContent]="sharingLink">
+                    <span class="label label-copy">{{'send.copyButton' | translate}}</span>
+                    <mat-icon *ngIf="!copyClicked" class="download icon icon-copy" title="">file_copy</mat-icon>
+                    <mat-icon *ngIf="copyClicked" class="icon icon-copyclicked">check</mat-icon>
+                </button>
+            </span>
+        </div>
+
+        <div class="passwordenforced" *ngIf="defaultConfig.enforcePassword">
+            <div class="label label-password">{{ 'send.passwordEnforced' | translate }}</div>
+            <div id="password" class="input-group ">
+                <input #passwordEnforced matInput type="text" class="form-control password"
+                    (click)="passwordEnforced.select()" [value]="passwordGenerated" readonly />
+                <mat-icon matSuffix [class.hidden]="!passwordUpdated">done</mat-icon>
+                <span class="input-group-append">
+                    <button mat-raised-button class="button-copy" [class.clicked]="copyClicked2" (click)="copyClick2()"
+                        color="primary" ngxClipboard [cbContent]="passwordGenerated">
+                        <span class="label label-copy">{{'send.copyButton' | translate}}</span>
+                        <mat-icon *ngIf="!copyClicked2" class="download icon icon-copy" title="">file_copy</mat-icon>
+                        <mat-icon *ngIf="copyClicked2" class="icon icon-copyclicked">check</mat-icon>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="openSettings()">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <span class="label label-title">{{'home.settings.title' | translate}}</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <span class="label label-description">{{'home.settings.description' | translate}}</span>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <a id="sessionname"></a>
+            <div class="sessionname">
+                <hr class="my-4">
+                <mat-form-field class="sessionname-input">
+                    <mat-label>{{'home.settings.sessionName' | translate}}</mat-label>
+                    <mat-icon matPrefix>edit</mat-icon>
+                    <input [maxLength]="256" type="text" #sessionName class="sessionname-input" matInput
+                        placeholder="Upload 1" />
+                    <mat-icon matSuffix [class.hidden]="!sessionNameUpdated">done</mat-icon>
+                    <mat-hint align="end">{{sessionName.value.length}} / 256</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="passwordprotect" *ngIf="!defaultConfig.enforcePassword">
+                <hr class="my-4">
+                <mat-icon matPrefix>lock</mat-icon>
+                <mat-slide-toggle class="" color="primary"  (change)="togglePassword()">
+                    <span class="label label-passwordprotect">{{'home.settings.passwordProtect' | translate}}</span>
+                </mat-slide-toggle>
+                <mat-form-field class="margin-left-20" *ngIf="showPassword">
+                    <input [maxLength]="256" type="text" matInput #password
+                        placeholder="{{'home.settings.password' | translate}}">
+                    <mat-icon matSuffix [class.hidden]="!passwordUpdated">done</mat-icon>
+                    <mat-hint align="end">{{password.value.length}} / 256</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="sessionlength" *ngIf="sessionLength && sessionLength[0].value !== 0">
+                <hr class="my-4">
+                <mat-form-field>
+                    <mat-label>{{'home.settings.retention' | translate}}</mat-label>
+                    <mat-select #retention ([value])="expiryDate">
+                        <mat-option *ngFor="let length of sessionLength" [value]="length.value">
+                            <span *ngIf="length.value === 1">{{length.viewValue}}&nbsp;{{'home.settings.day' |
+                                translate}}</span>
+                            <span *ngIf="length.value !== 1">{{length.viewValue}}&nbsp;{{'home.settings.days' |
+                                translate}}</span>
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matPrefix>access_time</mat-icon>
+                    <mat-icon matSuffix [class.hidden]="!retentionUpdated">done</mat-icon>
+                </mat-form-field>
+                <span class="margin-left-20 text-muted">{{expiryDate | dfnsFormat: 'PPPP p' }}</span>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

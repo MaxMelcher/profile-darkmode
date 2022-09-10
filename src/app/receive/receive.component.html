@@ -1,0 +1,16 @@
+<div class="container jumbotron receive mat-elevation-z2">
+  <h1 class="display-4">{{'home.title' | translate}}</h1>
+  <p class="lead">{{'home.byline' | translate}}</p>
+  <hr class="my-4">
+
+  <div *ngIf="!loginDisplay && configService.useAuthentication">
+    <div class="label-loginrequired">{{'home.loginRequired' | translate}}</div>
+    <button class="margin-top-20" color="primary" mat-raised-button (click)="appcomponent.login()">
+      <mat-icon>account_box</mat-icon>
+      <span class="label label-login">{{'home.login' | translate}}</span>
+    </button>
+  </div>
+
+  <app-sharing sessionType="4"></app-sharing>
+  
+</div>

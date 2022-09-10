@@ -1,0 +1,75 @@
+@media (pointer: coarse) {
+
+    /* hide on touch devices */
+    .hiddenOnMobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* hide on touch devices */
+    .hiddenOnMobile {
+        display: none;
+    }
+}
+
+.logo {
+    width: 20%;
+    float: right
+}
+
+.upload {
+    border-top: #1C8ADB solid 3px;
+    box-shadow: 0 8px 18px 0 rgb(0 0 0 / 9%);
+}
+
+.btn-send {
+    background-color: #008AD7;
+    border: 1px solid #008AD7;
+    color: white;
+}
+
+.btn-send:hover {
+    background-color: #25b1ff;
+}
+
+.alert
+{
+    background-color: #008AD7;
+    color: white;
+}
+
+.dragicon {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: #008AD7;
+}
+
+.dragtext {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.uploadfilecontainer {
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    height: 80px;
+    width: 54%;
+    margin: 20px 0px;
+    border: 2px dashed #1C8ADB;
+    border-radius: 10px;
+    position: relative;
+}
+
+.uploadfilecontainer:hover {
+    cursor: pointer;
+    background-color: #9ecbec !important;
+    opacity: 0.8;
+}
+
+.mat-column-progress {
+    width: 30% !important;
+}

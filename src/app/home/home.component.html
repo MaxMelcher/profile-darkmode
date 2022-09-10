@@ -1,0 +1,86 @@
+<div class="container jumbotron home mat-elevation-z2">
+
+  <img *ngIf="defaultConfig?.logo" alt="logo" class="logo" src="{{defaultConfig?.logo}}">
+  <div class="row">
+    <div class="col-12 col-sm order-12 order-sm-1">
+      <h1 class="display-4">{{'home.title' | translate}}</h1>
+      <p class="lead">{{'home.byline' | translate}}</p>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <div *ngIf="loginDisplay || !configService.useAuthentication">
+    <div class="row btn-row">
+      <div class="col">
+        <p class="label label-sendreceive">{{'home.sendOrReceive' | translate}}</p>
+        <div class="lead"><button mat-raised-button class="btn-send" color="primary"
+            (click)="file.click()">{{'home.sendFiles' |
+            translate}}
+            <mat-icon class="icon-upload" title="{{'home.sendFiles' | translate}}">cloud_upload</mat-icon>
+          </button>
+
+          <button mat-raised-button class="btn-receive" [routerLink]="['/receive']" color="accent"
+            [disabled]="upload.uploaded" class="btn-receive">{{'home.receiveFiles' | translate}}
+            <mat-icon class="icon-download" title="{{'home.receiveFiles' | translate}}">cloud_download</mat-icon>
+          </button>
+        </div>
+        <div #dragdrop class="hiddenOnMobile uploadfilecontainer" (click)="file.click()" appDragDrop
+          (FileDropped)="upload.onFilesAdded($event)">
+          <mat-icon class="dragicon icon icon-uploadfilecontainer" title="{{'home.sendFiles' | translate}}">cloud_upload
+          </mat-icon>
+          <div class="dragtext">{{'home.dragAndDrop' | translate}}</div>
+        </div>
+      </div>
+      <div class="col hiddenOnMobile"
+        *ngIf="defaultConfig?.allowedFileSize > 0 || defaultConfig?.allowedFileExtensions">
+        <mat-accordion class="settings">
+          <mat-expansion-panel class="settings-panel file-size-setting" hideToggle=true disabled="true"
+            *ngIf="defaultConfig?.allowedFileSize > 0">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-muted">
+                {{'upload.fileSizeLimit' | translate}} {{defaultConfig?.allowedFileSize | filesize}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+          </mat-expansion-panel>
+          <mat-expansion-panel class="settings-panel allowed-extension-settings"
+            *ngIf="defaultConfig.allowedFileExtensions">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-muted">
+                {{'upload.fileExtensionLimit' | translate}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            {{defaultConfig?.allowedFileExtensions}}
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div *ngIf="!loginDisplay && configService.useAuthentication">
+    <div class="label label-loginrequired">{{'home.loginRequired' | translate}}</div>
+    <button class="margin-top-20 btn-login" color="primary" mat-raised-button (click)="appcomponent.login()">
+      <mat-icon class="icon-login">account_box</mat-icon>
+      <span class="label label-login">{{'home.login' | translate}}</span>
+    </button>
+  </div>
+</div>
+<input style="visibility: hidden;" type="file" #file (change)="upload.onFilesAdded($event.target.files)" multiple />
+<app-uploader #upload [sessionType]="2"></app-uploader>
+
+<a id="destination"></a>
+<div *ngIf="!upload.inProgress && upload.uploaded">
+  <div class="alert alert-success" role="alert">
+    <mat-icon class="icon icon-uploadcomplete">done_all</mat-icon>
+    <span class="label label-uploadcomplete">{{'send.uploadComplete' | translate}}</span>
+    <a class="link float-end" (click)="reload()">{{'home.reload' | translate: {Default: "click here to start a new session"} }}
+      <mat-icon class="icon-login">refresh</mat-icon>
+    </a>
+  </div>
+  
+</div>
+
+<app-sharing [sessionType]="2" *ngIf="upload.uploaded && !upload.inProgress"></app-sharing>

@@ -1,0 +1,17 @@
+{
+    "allowedFileExtensions": "docx, doc, odt, rtf, wps, wpd, wks, xls, xlsx, ods, xlr, bak, cap, cfg, cpl, cur, dll, dmp, drv, icns, ini, lnk, msi, sys, tmp, part, ppt, pptx, key, odp, pps, txt, csv, pdf, xml, zip, 7z, arj, deb, pkg, rar, rpm, gz, z, tar, eml, emlx, ics, mbox, msg, oft, ost, pst, tnef, vcf, pfx, crt, cad, dxf, asp, cs, aspx, cfm, cgi, css, htm, html, js, jsp, php, rss, xhtm, py, py, c, class, h, java, sh, swift, vb, ai, bmp, gif, ico, jpeg, jpg, png, psd, svg, tif, tiff, aif, cda, mid, midi, mp3, m4a, mpa, ogg, wav, wma, wpl, bin, dmg, iso, toast, vcd, dat, db, dbf, log, mdb, sav, sql, fnt, fon, otf, ttf, 3g2, 3gp, avi, flv, h264, m4v, mkv, mov, mp4, mpg, mpeg, mpe, rm, swf, vob, wmv, json",
+    "allowedRetentions": "7,1,14,28",
+    "allowedFileSize": 1099511627776,
+    "baseUrl": "https://profile.mevitco.de",
+    "cleanupPII": 30,
+    "logo": "https://mevitcofcmed6celnnrw.blob.core.windows.net/logo/logo.png",
+    "logoTop": "https://mevitcofcmed6celnnrw.blob.core.windows.net/logo/logo.png",
+    "css": "https://mevitcofcmed6celnnrw.blob.core.windows.net/logo/mevitco.css",
+    "languageFolder": "https://mevitcofcmed6celnnrw.blob.core.windows.net/logo/",
+    "languages": "de,us,dk",
+    "useEmail": "True",
+    "instrumentationKey": null,
+    "useTelemetry": false,
+    "enforcePassword": false,
+    "admin": null
+}

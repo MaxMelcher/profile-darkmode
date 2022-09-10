@@ -1,0 +1,52 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+
+      <a class="navbar-brand" (click)="reload()" [routerLink]="['/']">
+        <div class="" *ngIf="defaultConfig?.logoTop">
+          <img alt="{{'home.product' | translate}}" title="{{'home.product' | translate}}" height="40px"
+            class="logo-top" src="{{defaultConfig?.logoTop}}">
+        </div>
+        <div height="40px" class="" *ngIf="!defaultConfig?.logoTop">
+          <img alt="{{'home.product' | translate}}" title="{{'home.product' | translate}}" height="40px"
+            class="logo-top" src="/assets/logo.png">
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="nav-link text-dark" *ngIf="loginDisplay" [routerLink]="['/my']">{{'nav.my' | translate}}</a>
+
+
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" title="{{'nav.onlyForAdmins' | translate}}" *ngIf="loginDisplay && isAdmin"
+              [routerLink]="['/setup']">{{'nav.setup' | translate}}</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" title="{{'nav.onlyForAdmins' | translate}}" *ngIf="loginDisplay && isAdmin"
+              [routerLink]="['/statistics']">{{'nav.statistics' | translate}}</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item pointer" title="{{email}}" *ngIf="loginDisplay" (click)="logout()">
+            <a class="nav-link text-dark">{{'nav.logout' | translate}}</a>
+          </li>
+
+          <span style="display: inline-flex;" class="languages" *ngIf="languages.length > 1">
+            <li class="nav-item language" *ngFor="let lang of languages">
+              <!-- dynamic language {{lang}} -->
+              <a class="nav-link text-dark pointer" (click)="setLanguage(lang)">
+                <span class="fi fi-{{lang}}"></span>
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

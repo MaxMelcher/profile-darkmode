@@ -1,0 +1,67 @@
+.receive
+{
+    padding-bottom: 20px;
+    border-top: 3px solid #008AD7;
+    box-shadow: 0 8px 18px 0 rgb(0 0 0 / 9%);
+}
+
+.sharelink {
+    margin-bottom: 40px;
+}
+
+.form-control
+{
+    text-decoration: underline;
+}
+
+.clicked {
+    background-color: green;
+}
+
+.mat-expansion-panel
+{
+    margin-bottom: 20px !important;
+}
+
+.copy {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    height: auto;
+    margin: 0;
+}
+
+.settings {
+    margin-top: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+.link {
+    padding-left: 20px;
+    text-decoration: underline;
+    height: 41px;
+}
+
+.full-width
+{
+    width: 100%;
+}

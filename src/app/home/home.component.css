@@ -1,0 +1,146 @@
+.logo {
+    width: 20%;
+    float: right
+}
+
+
+.home {
+    margin-top: 20px;
+}
+
+
+
+.btn-send
+{
+    background-color: #008AD7;
+    border: 1px solid #008AD7;
+    color: white;
+}
+
+.btn-send:hover
+{
+    background-color: #25b1ff;
+}
+
+.btn-receive
+{
+    color: #008AD7;
+    background-color: white;
+    border: 1px solid #008AD7;
+}
+
+.btn-receive:hover
+{
+    background-color: #25b1ff;
+    color: white;
+}
+
+.link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-receive {
+    margin-left: 20px;
+}
+
+.ng-touched .ng-invalid {
+    border: 1px solid red;
+}
+
+.allowed-extension-settings
+{
+    margin-bottom: 20px !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+mat-icon {
+    vertical-align: middle;
+}
+
+
+
+.typeButton {
+    margin-left: 20px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.sharing {
+    margin: 20px;
+}
+
+.progress {
+    margin-top: 20px;
+}
+
+@media (pointer: coarse) {
+
+    /* hide on touch devices */
+    .hiddenOnMobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* hide on touch devices */
+    .hiddenOnMobile {
+        display: none;
+    }
+
+    .btn-row {
+        padding-bottom: 5px;
+    }
+}
+
+.dragicon {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: #008AD7;
+}
+
+.dragtext {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.alert
+{
+    background-color: #008AD7;
+    color: white;
+}
+
+.uploadfilecontainer {
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    height: 80px;
+    width: 54%;
+    margin: 20px 0px;
+    border-radius: 10px;
+    position: relative;
+    border: 2px dashed #008AD7 ;
+    border-radius: 6px ;
+    background-color: white ;
+    text-align: center ;
+    height: 110px ;
+    width: 400px ;
+}
+
+.uploadfilecontainer:hover {
+    cursor: pointer;
+    background-color: #9ecbec !important;
+    opacity: 0.8;
+}

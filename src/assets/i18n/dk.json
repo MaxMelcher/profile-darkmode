@@ -1,0 +1,139 @@
+{
+  "home": {
+      "product": "ProFile",
+      "title": "ProFile - Stor filoverførsel",
+      "byline": "Det sikre og nemme 'Large File Transfer' -program",
+      "sendFiles": "Send filer",
+      "receiveFiles": "modtage filer",
+      "sendOrReceive": "Send eller modtag?",
+      "uploadFiles": "Upload filer",
+      "share": "Del",
+      "dragAndDrop": "Træk filer / mapper her for at sende dem",
+      "settings": {
+          "title": "Avancerede indstillinger",
+          "description": "Navn, adgangskode, retention",
+          "sessionName": "Venligt navn til uploadet",
+          "passwordProtect": "Password Protect.",
+          "password": "Adgangskode",
+          "retention": "Slet filer efter",
+          "days": "dage",
+          "day": "dag"
+      },
+      "loginRequired": "Log venligst ind for at sende / modtage filer",
+      "login": "Log på"
+  },
+  "send": {
+      "sendFiles": "Upload filer",
+      "uploadFiles": "Vælg filer for at uploade:",
+      "tableFile": "Fil",
+      "tableProgress": "Fremskridt",
+      "of": "af",
+      "share": "Del nu dette link:",
+      "copyButton": "kopi",
+      "uploadComplete": "Upload succesfuld.Du kan dele linket herunder med modtageren af filerne eller uploade flere filer.",
+      "notAllowedFileExtension": "Filforlængelsen er ikke tilladt",
+      "notAllowedFileSize": "Filen er større end den tilladte filstørrelse"
+  },
+  "receive": {
+      "passwordProtect": "Adgangskode Beskyt filerne",
+      "sessionName": "Venligt navn til uploadet",
+      "noEmail": "E-mail-meddelelser er ikke konfigureret.Kopér venligst det viste link for at få filerne"
+  },
+  "upload": {
+      "uploadComplete": "Upload succesfuld.Modtageren vil blive underrettet.Du kan også uploade flere filer.",
+      "uploadCompleteNoEmail": "Upload succesfuld.E-mail-meddelelser er ikke konfigureret, bedes du oplyse anmodningen.Du kan også uploade flere filer.",
+      "title": {
+          "uploading": "Filer {{elementer}}",
+          "uploadComplete": "Upload komplet"
+      },
+      "fileExtensionLimit": "Du kan uploade filer med følgende filudvidelser:",
+      "fileSizeLimit": "Den maksimalt tilladte filstørrelse er:",
+      "deleted": "Filer kan ikke uploades længere",
+      "sessionTypeSend": "Yderligere filer kan ikke uploades",
+      "virus": "Virus detekteret - Filen kan ikke uploades"
+  },
+  "download": {
+      "title": "Filer",
+      "auth": "Downloadadgangskoden er påkrævet for at få adgang til denne side.",
+      "created": "Oprettet",
+      "expires": "Udløber",
+      "download": "Hent",
+      "downloadAll": "Download All.",
+      "totalOf": "I alt af",
+      "zipCompressed": "Zip komprimeret",
+      "password": "downloadPassword",
+      "passwordInvalid": "Adgangskoden er ikke korrekt",
+      "deleted": "Undskyld!Filerne er ikke tilgængelige."
+  },
+  "setup": {
+      "title": "Opsætning",
+      "byline": "Standarder, Autentificering, Email",
+      "auth": "Administrationsadgangskoden er påkrævet for at få adgang til denne side.",
+      "password": "Admin password.",
+      "passwordInvalid": "Adgangskoden er ugyldig",
+      "save": "Gemme",
+      "saveTime": "Det tager 1 minut, indtil ændringer er effektive - denne side vil automatisk genindlæse",
+      "test": "prøve",
+      "login": "Log på",
+      "emailServer": "E-mail-server, f.eks. smtp.office365.com",
+      "emailPort": "port på e-mail-serveren, f.eks.587.",
+      "emailUser": "Brugernavn på e-mail-kontoen, f.eks. support@mevitco.de.",
+      "emailPassword": "Adgangskode til e-mail-kontoen (hvis tom, den gemte adgangskode bruges)",
+      "emailFrom": "Vis navn på e-mail-kontoen",
+      "subject": "email emne",
+      "emailPlaceholder": "Placeholder ## Link ## vil blive erstattet med linket for at downloade filerne",
+      "subscriptionId": "Azure abonnement ID.",
+      "adminUserEmail": "Admin Bruger Email (S) - Links Setup / Statistics vil blive vist til disse bruger (r)",
+      "clientId": "Klient ID.",
+      "tenantId": "Lejer ID.",
+      "baseUrl": "Base-URL, vil blive brugt i e-mailen",
+      "logo": "URL til logo-filen",
+      "logoHelp": "Logo-filen skal kunne nås fra alle klienter, se FAQ",
+      "logoTop": "URL til top logo filen",
+      "logoTopHelp": "Top logo-filen skal kunne nås fra alle klienter, se FAQ",
+      "css": "URL til CSS-filen",
+      "cssHelp": "CSS Stylesheet-filen skal kunne nås fra alle klienter, se FAQ",
+      "languageFolder": "URL til den mappe, hvor lokaliseringsfilerne er gemt",
+      "languageFolderHelp": "Mappe skal være tilgængelig fra alle klienter, se FAQ",
+      "languages": "Sprogkoder for at oversætte ansøgningen",
+      "languagesHelp": "Kommasepareret, første værdi er standard, fx for tysk, en for engelsk",
+      "allowedFileSize": "Maksimal filstørrelse i byte (0 for ubegrænset)",
+      "allowedFileSizeUnlimited": "Ubegrænset filstørrelse",
+      "allowedFileSizeRequired": "Et nummer er påkrævet",
+      "allowedFileExtensions": "Tilladt filudvidelse (tom for alle, ellers kommasepareret, f.eks.: CSV, TXT, XLS)",
+      "allowedFileExtensionsRequired": "Alle filudvidelser er tilladt",
+      "allowedRetentions": "Tilladt opbevaring retention i dage (kommasepareret, første værdi er standard)",
+      "allowedRetentionsInvalid": "komma adskilt f.eks.'1,2,3,4'.'0' deaktiverer denne funktion",
+      "zeroRetention": "0 dage betyder, at filerne ikke vil blive slettet overhovedet", 
+      "cleanupPII": "Slet PII-data efter (0 for at deaktivere denne funktion)",
+      "days": "dage",
+      "filenotfound": "Fil ikke fundet eller ikke tilgængelig",
+      "example": "Eksempel"
+  },
+  "nav": {
+      "logout": "Log ud",
+      "my": "Mine sessioner",
+      "statistics": "Statistikker",
+      "setup": "Opsætning",
+      "onlyForAdmins": "Kun synlig for administratorer"
+  },
+  "my": {
+      "title": "Mine sessioner.",
+      "search": "Søg efter ID.",
+      "table": {
+          "size": "Størrelse",
+          "created": "Oprettet",
+          "retention": "Slet efter",
+          "type": "type",
+          "send": "sende",
+          "receive": "modtage"
+      }
+  },
+  "statistics": {
+      "year": "År",
+      "auth": "Administrationsadgangskoden er påkrævet for at få adgang til denne side.",
+      "password": "Admin password.",
+      "update": "Statistikken opdateres hvert 10. minut",
+      "auditreport": "Revisionsberetning"
+  }
+}

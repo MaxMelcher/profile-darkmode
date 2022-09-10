@@ -1,0 +1,19 @@
+<body class="d-flex flex-column min-vh-100">
+  <app-nav-menu></app-nav-menu>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="mt-auto padding-top-20">
+    <div class="container">
+      <div class="row">
+        <div class="col text-muted hidden">
+          <a href="https://mevitco.de">{{'home.product' | translate}}</a>
+        </div>
+        <div class="col text-muted text-end float-end">
+          <span class="host">Host: {{environment.host}} </span>
+          <span class="version">Version: {{environment.version}} </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>

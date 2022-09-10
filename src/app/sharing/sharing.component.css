@@ -1,0 +1,51 @@
+.sharelink {
+    margin-bottom: 10px;
+}
+
+.sharingsection {
+    margin-bottom: 40px;
+}
+
+.link {
+    padding-left: 20px;
+    text-decoration: underline;
+}
+
+.password {
+    padding-left: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.clicked {
+    background-color: green !important;
+}
+
+.password {
+    background-color: #e9ecef;
+}
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+.mat-form-field {
+    width: 50%
+}
+
+button.button-copy {
+    min-width: 150px;
+    background-color: #008AD7;
+    border: 1px solid;
+    border-color: #008AD7;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 6px;
+    min-width: 250px;
+}
+
+.link {
+    height: 41px;
+}

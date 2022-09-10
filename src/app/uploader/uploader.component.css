@@ -1,0 +1,44 @@
+table.mat-table
+{
+    width: 100%;
+}
+
+.error
+{
+    background-color: #e1bbbb;
+}
+
+.progress 
+{
+    min-width: 120px;
+}
+
+.mat-progress-bar-fill:after
+{
+    background-color: #008AD7 !important;
+}
+
+.download
+{
+    filter: invert(100%);
+}
+
+.sessionname-input
+{
+    width: 75%;
+}
+
+.sharelink
+{
+    margin-top: 20px;
+}
+
+.sharing-input
+{
+    width: 100%;
+}
+
+mat-icon
+{
+    vertical-align: middle;
+}
