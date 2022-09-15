@@ -24,9 +24,9 @@
 
 .btn-receive
 {
-    color: #008AD7;
-    background-color: white;
-    border: 1px solid #008AD7;
+    color: var(--theme-btn-recieve-color);
+    background-color: var(--theme-background);
+    border: 1px solid var(--theme-btn-recieve-border);
 }
 
 .btn-receive:hover
@@ -143,4 +143,8 @@ mat-icon {
     cursor: pointer;
     background-color: #9ecbec !important;
     opacity: 0.8;
+}
+
+.mat-elevation-z2{
+    box-shadow: var(--theme-box-shadow) !important;
 }

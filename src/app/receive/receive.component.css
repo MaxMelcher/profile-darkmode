@@ -65,3 +65,7 @@
 {
     width: 100%;
 }
+
+.mat-elevation-z2{
+    box-shadow: var(--theme-box-shadow) !important;
+}

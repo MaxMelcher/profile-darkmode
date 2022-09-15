@@ -24,6 +24,7 @@ export class NavMenuComponent implements OnInit {
   private readonly _destroying$ = new Subject<void>();
   loginDisplay: boolean;
   languages: string[] = [];
+  toggleDarkModeCheck = false;
 
   constructor(
     private translate: TranslateService,
@@ -47,8 +48,22 @@ export class NavMenuComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
-
+  toggleDarkMode(){
+    if(this.toggleDarkModeCheck){
+      document.documentElement.setAttribute('theme', 'dark');
+      this.cookieService.set('theme', 'dark');
+    }
+    else{
+      document.documentElement.setAttribute('theme', '');
+      this.cookieService.set('theme', '');
+    }
+  }
   ngOnInit() {
+    var theme = this.cookieService.get('theme');
+    if(theme && theme == 'dark'){
+      this.toggleDarkModeCheck = true;
+      this.toggleDarkMode()
+    }
 
     this.router.events.subscribe(() => {
       //reset the title if we navigate
