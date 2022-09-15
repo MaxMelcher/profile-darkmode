@@ -22,3 +22,7 @@
 .hidden {
   display: none;
 }
+body{
+  background-color:  var(--theme-background) !important;
+  color: var(--theme-color) !important;
+}

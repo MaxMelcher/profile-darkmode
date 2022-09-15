@@ -1,0 +1,8 @@
+:root {
+    --theme-background: white;
+    --theme-color: #292929;
+    --theme-btn-recieve-color: #008AD7;
+    --theme-btn-recieve-border: #008AD7;
+    --theme-box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    --theme-nav-box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
